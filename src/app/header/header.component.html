@@ -1,0 +1,38 @@
+<div style="position: sticky;">
+<nav>
+  <div class="wrap">
+    <a class="navbar-brand brand" routerLink="">JobHunter</a>
+    <form>
+      <div class="input__wrap" >
+
+        <input type="text" class="input search" name="LoginOrMail" placeholder="Найти вакансии...">
+        <div class="line"></div>
+        <i class="fa fa-search" aria-hidden="true"></i>
+
+      </div>
+
+    </form>
+
+  <div class="links">
+
+    <a routerLink="/../list/all" routerLinkActive="active">Вакансии<div class="line"></div></a>
+
+    <a *ngIf="!User.isLogged" routerLinkActive="active" routerLink="/../login">Вход<div class="line"></div></a>
+
+    <a *ngIf="!User.isLogged" routerLinkActive="active" routerLink="/../register">Регистрация<div class="line"></div></a>
+
+    <a *ngIf="User.isLogged" routerLinkActive="active" routerLinkActive="active">Добавить запись<div class="line"></div></a>
+
+
+    <a *ngIf="User.isLogged" (click)="User.exit()">Выход</a>
+
+
+  </div>
+
+  </div>
+</nav>
+<div style="background-color: #2f3030; height: 7px; position: relative;
+bottom: 0;
+left: 0;
+width: 100%;"></div>
+</div>

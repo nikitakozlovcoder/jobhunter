@@ -1,0 +1,104 @@
+<div style="
+background-image: url('assets/bg2.jpg');
+width: 100%;
+height: 100vh;
+background-position: top;
+background-attachment: fixed;
+background-size: cover;
+background-repeat: no-repeat;
+background-blend-mode: overlay;
+background-color: rgba(0, 0, 0, 0.38);
+display: flex;
+flex-direction: column;
+overflow: hidden;
+position: relative;
+
+">
+
+  <nav>
+    <div class="wrap">
+      <a class="navbar-brand brand"  routerLink="">JobHunter</a>
+      <div class="links">
+          <a routerLink="list/all">Вакансии</a>
+          <a *ngIf="!User.isLogged" routerLink="login"> Вход </a>
+          <a *ngIf="!User.isLogged" routerLink="register">Регистрация</a>
+          <a *ngIf="User.isLogged">Добавить запись</a>
+          <a *ngIf="User.isLogged" (click)="User.exit()">Выход</a>
+      </div>
+    </div>
+  </nav>
+  <div class="wrap form-wrap">
+    <h2 class="title">Найди работу мечты сейчас.</h2>
+  <form class="form-search">
+    <input type="text" class="search"  placeholder="Найти вакансии..." >
+    <button>Найти <i class="fa fa-search" aria-hidden="true"></i></button>
+
+  </form>
+
+    <div style="display: flex;
+    align-items: center;cursor: pointer; margin-top: 30px">
+      <span style="
+      color: white;
+      background-color: #c34c38;
+      padding: 8px !important;
+
+      margin-right: 5px !important;
+      font-size: 22px !important;
+      " class="submit"
+      (click)="onClickRegister()">Регистрация</span>
+
+      <h6 style="color: white; display: inline-block; padding-left: 5px; padding-top: 5px; padding-bottom: 5px; border-left: 1px solid #9A9A9A; margin: 0;">Более 3000
+        <br> вакансий ждут тебя.</h6>
+
+    </div>
+  </div>
+
+  <div class="register" [class.show] = "formShow">
+<div style="display: flex; justify-content: space-between; width: 100%;">
+    <div style="color: white; font-size: 18px;">Присоединяйся!</div>
+    <i class="fa fa-times" aria-hidden="true" style="color: white; cursor: pointer" (click)="onClickRegister()"></i>
+</div>
+    <form class="register__form">
+<div class="input__wrap">
+      <input type="text" name="Login" class="register__input" placeholder="Логин...">
+  <div class="line"></div>
+</div>
+      <div class="input__wrap">
+      <input type="text" name="Name" class="register__input" placeholder="Имя...">
+        <div class="line"></div>
+      </div>
+      <div class="input__wrap">
+        <input type="text" name="Surname" class="register__input" placeholder="Фамилия..."><div class="line"></div>
+
+      </div>
+
+      <div class="input__wrap"> <input type="password" name="Password" class="register__input" placeholder="Пароль...">
+      <div class="line"></div>
+      </div>
+      <div class="input__wrap">
+
+      <input type="password" name="RepeatePaswword" class="register__input" placeholder="Повторите пароль...">
+        <div class="line"></div>
+      </div>
+
+      <input type="submit" value='Отправить' class="submit">
+    </form>
+  </div>
+</div>
+<div class="content" >
+  <div class="line"></div>
+<div class="wrap text" >
+  <app-best></app-best>
+  <app-categories class="categories"></app-categories>
+</div>
+</div>
+<div style="background-image: url('assets/bg.jpg');
+height: 350px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+background-attachment: fixed;
+background-blend-mode: overlay;
+background-color: rgba(0, 0, 0, 0.38);"
+></div>
+<app-footer style="margin-top: auto;"></app-footer>

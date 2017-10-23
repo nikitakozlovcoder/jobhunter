@@ -1,0 +1,42 @@
+<app-header></app-header>
+<br>
+<br>
+<div class="wrap">
+<h3>Авторизация.</h3>
+  <hr>
+
+  <a class="link" routerLink="/../register">Еще не с нами?</a>
+  <br>
+  <a class="link">Забыли пароль?</a>
+
+
+  <form>
+    <label>Логин или почта:</label>
+
+    <div class="input__wrap" >
+    <input type="text" class="input" name="LoginOrMail" placeholder="Логин или почта...">
+      <div class="line"></div>
+    </div>
+
+
+    <br>
+
+    <label>Пароль:</label>
+
+    <div class="input__wrap" style="flex-grow: 1;">
+        <input type="password" class="input" name="LoginOrMail" placeholder="Пароль...">
+        <div class="line"></div>
+      </div>
+
+    <br>
+
+    <div class="input__wrap" style="display: flex; align-items: center;">
+      <input type="checkbox"><span style="padding-left: 10px;">Запомнить меня.</span>
+    </div>
+
+    <div class="input__wrap" style="margin-top: 20px;">
+      <input type="text" class="submit" value="Отправить">
+    </div>
+  </form>
+</div>
+<app-footer style="margin-top: auto;"></app-footer>
